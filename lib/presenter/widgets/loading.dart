@@ -29,7 +29,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator>
       end: 360,
     ).animate(_controller);
 
-    // _controller.repeat();
+    _controller.repeat();
   }
 
   @override
@@ -39,7 +39,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator>
         animation: _animation,
         builder: (context, child) {
           return Transform.rotate(
-            angle: _animation.value * math.pi * (-2),
+            angle: _animation.value * math.pi / 60,
             child: Image(
               image: Assets.images.logo.provider(),
               width: 200,
