@@ -10,7 +10,8 @@ class LoadingIndicator extends StatefulWidget {
   State<LoadingIndicator> createState() => _LoadingIndicatorState();
 }
 
-class _LoadingIndicatorState extends State<LoadingIndicator> with SingleTickerProviderStateMixin {
+class _LoadingIndicatorState extends State<LoadingIndicator>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -20,7 +21,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator> with SingleTickerPr
 
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: Duration(seconds: 10),
     );
 
     _animation = Tween<double>(
@@ -28,7 +29,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator> with SingleTickerPr
       end: 360,
     ).animate(_controller);
 
-    _controller.repeat();
+    // _controller.repeat();
   }
 
   @override
@@ -38,7 +39,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator> with SingleTickerPr
         animation: _animation,
         builder: (context, child) {
           return Transform.rotate(
-            angle: _animation.value * math.pi / 50,
+            angle: _animation.value * math.pi * (-2),
             child: Image(
               image: Assets.images.logo.provider(),
               width: 200,
