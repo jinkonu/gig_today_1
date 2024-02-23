@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:gig_today_1/presenter/widgets/logo_image.dart';
 
 import '../gen/assets.gen.dart';
 
@@ -40,10 +41,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator>
         builder: (context, child) {
           return Transform.rotate(
             angle: _animation.value * math.pi / 60,
-            child: Image(
-              image: Assets.images.logo.provider(),
-              width: 200,
-            ),
+            child: LogoImage(size: 50),
           );
         }
       ),
