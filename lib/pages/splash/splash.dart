@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:gig_today_1/presenter/widgets/loading.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {
@@ -13,14 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-
-          ],
-        ),
-      ),
+      body: LoadingIndicator(),
     );
   }
 }
