@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gig_today_1/presenter/app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(GigTodayApp());
 }
 
 class MyApp extends StatelessWidget {
