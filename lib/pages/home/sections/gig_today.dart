@@ -24,7 +24,7 @@ class _GigTodaySectionState extends State<GigTodaySection> {
             fontSize: 30,),),
         SizedBox(height: 20,),
         Container(
-          height: 350,
+          height: 400,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {

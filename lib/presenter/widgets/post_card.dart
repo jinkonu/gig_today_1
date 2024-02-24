@@ -107,11 +107,14 @@ class ShowCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(30),
       child: InkWell(
-        onTap: () => context.router.push(const SplashRoute()),
-        child: Image(
-          image: Assets.images.postExample1.provider(),
-          width: 200,
-          height: 280,
+        onTap: () => context.router.push(const GigRoute()),
+        child: Hero(
+          tag: "post",
+          child: Image(
+            image: Assets.images.postExample1.provider(),
+            width: 200,
+            height: 280,
+          ),
         ),
       ),
     );
