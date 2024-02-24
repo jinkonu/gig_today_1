@@ -41,7 +41,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator>
         builder: (context, child) {
           return Transform.rotate(
             angle: _animation.value * math.pi / 60,
-            child: LogoImage(size: 50),
+            child: LogoImage(size: 170),
           );
         }
       ),
