@@ -13,7 +13,7 @@ class GigTodayApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterWebFrame(
-      maximumSize: const Size(400, 800),
+      maximumSize: const Size(500, 1000),
       backgroundColor: Colors.black12,
       builder: (_) => MaterialApp.router(
         title: "Gig Today",
