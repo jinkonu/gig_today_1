@@ -28,7 +28,9 @@ class _GigTodaySectionState extends State<GigTodaySection> {
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return Post();
+              return Post(
+                index: index,
+              );
             },
             itemCount: 10,
           ),

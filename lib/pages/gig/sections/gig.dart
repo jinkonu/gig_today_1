@@ -24,12 +24,13 @@ class _GigPageState extends State<GigPage> {
         child: Column(
           children: <Widget>[
             InkWell(
+              onTap: () => context.router.pop(),
               child: Hero(
-                tag: "post",
+                tag: 'post0',
                 child: Image(
                 image: Assets.images.postExample1.provider(),
-                width: 200,
-                height: 280,),
+                width: MediaQuery.of(context).size.width,
+                ),
               ),
             )
           ],

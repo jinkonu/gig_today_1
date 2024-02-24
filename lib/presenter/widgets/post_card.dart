@@ -6,42 +6,22 @@ import 'package:gig_today_1/presenter/navigation/navigation.dart';
 import '../gen/assets.gen.dart';
 
 class Post extends StatelessWidget {
-  const Post({super.key});
+  final int index;
+
+  const Post({
+    super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 20.0),
       child: Stack(children: [
-        ShowCard(),
+        ShowCard(index: index,),
         AtButton(),
         ArtistButtons(),
       ]),
-    );
-  }
-}
-
-class ArtistButtons extends StatelessWidget {
-  const ArtistButtons({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 20, // 조절 가능: 아래로부터의 거리
-      left: 0, // 조절 가능: 왼쪽으로부터의 거리
-      right: 0, // 조절 가능: 오른쪽으로부터의 거리
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            ArtistButton(name: "radiohead",),
-            ArtistButton(name: "deftones",),
-            ArtistButton(name: "gingnang boyz",),
-          ],
-        ),
-      )
     );
   }
 }
@@ -63,12 +43,39 @@ class ArtistButton extends StatelessWidget {
           padding: MaterialStateProperty.all(
               EdgeInsets.symmetric(vertical: 10, horizontal: 10)),
           backgroundColor:
-          MaterialStateProperty.all(Colors.black.withOpacity(0.7)),
+              MaterialStateProperty.all(Colors.black.withOpacity(0.7)),
         ),
         child: Text(
           name,
           style: TextStyle(color: Colors.white),
         ));
+  }
+}
+
+class ShowCard extends StatelessWidget {
+  final int index;
+
+  const ShowCard({
+    super.key,
+    required this.index,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: InkWell(
+        onTap: () => context.router.push(const GigRoute()),
+        child: Hero(
+          tag: 'post$index',
+          child: Image(
+            image: Assets.images.postExample1.provider(),
+            width: 200,
+            height: 280,
+          ),
+        ),
+      ),
+    );
   }
 }
 
@@ -97,26 +104,32 @@ class AtButton extends StatelessWidget {
   }
 }
 
-class ShowCard extends StatelessWidget {
-  const ShowCard({
+class ArtistButtons extends StatelessWidget {
+  const ArtistButtons({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(30),
-      child: InkWell(
-        onTap: () => context.router.push(const GigRoute()),
-        child: Hero(
-          tag: "post",
-          child: Image(
-            image: Assets.images.postExample1.provider(),
-            width: 200,
-            height: 280,
+    return Positioned(
+        bottom: 70, // 조절 가능: 아래로부터의 거리
+        left: 0, // 조절 가능: 왼쪽으로부터의 거리
+        right: 0, // 조절 가능: 오른쪽으로부터의 거리
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ArtistButton(
+                name: "greenflameboys",
+              ),
+              ArtistButton(
+                name: "deftones",
+              ),
+              ArtistButton(
+                name: "gingnang boyz",
+              ),
+            ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
