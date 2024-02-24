@@ -24,12 +24,13 @@ class _GigTodaySectionState extends State<GigTodaySection> {
             fontSize: 30,),),
         SizedBox(height: 20,),
         Container(
-          height: 290,
+          height: 350,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return PostCard();
+              return Post();
             },
+            itemCount: 10,
           ),
         ),
       ],
