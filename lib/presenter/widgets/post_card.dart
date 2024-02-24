@@ -16,18 +16,48 @@ class Post extends StatelessWidget {
         PostCard(),
         AtButton(),
         Positioned(
-            bottom: 40,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return Text(
-                  "hi",
-                  style: TextStyle(color: Colors.white),
-                );
-              }
-            ))
+          bottom: 20, // 조절 가능: 아래로부터의 거리
+          left: 0, // 조절 가능: 왼쪽으로부터의 거리
+          right: 0, // 조절 가능: 오른쪽으로부터의 거리
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                ArtistButton(name: "radiohead",),
+                ArtistButton(name: "deftones",),
+                ArtistButton(name: "gingnang boyz",),
+              ],
+            ),
+          )
+        ),
       ]),
     );
+  }
+}
+
+class ArtistButton extends StatelessWidget {
+  final String name;
+
+  const ArtistButton({
+    super.key,
+    required this.name,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        onPressed: () => {},
+        style: ButtonStyle(
+          minimumSize: MaterialStateProperty.all(Size(20, 30)),
+          padding: MaterialStateProperty.all(
+              EdgeInsets.symmetric(vertical: 10, horizontal: 10)),
+          backgroundColor:
+          MaterialStateProperty.all(Colors.black.withOpacity(0.7)),
+        ),
+        child: Text(
+          name,
+          style: TextStyle(color: Colors.white),
+        ));
   }
 }
 
