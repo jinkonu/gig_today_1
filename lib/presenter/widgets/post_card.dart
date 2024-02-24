@@ -13,7 +13,7 @@ class Post extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 20.0),
       child: Stack(children: [
-        PostCard(),
+        ShowCard(),
         AtButton(),
         ArtistButtons(),
       ]),
@@ -97,8 +97,8 @@ class AtButton extends StatelessWidget {
   }
 }
 
-class PostCard extends StatelessWidget {
-  const PostCard({
+class ShowCard extends StatelessWidget {
+  const ShowCard({
     super.key,
   });
 

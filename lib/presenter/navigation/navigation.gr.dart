@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    GigRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const GigPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -27,7 +33,27 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SplashPage(),
       );
     },
+    VenueRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const VenuePage(),
+      );
+    },
   };
+}
+
+/// generated route for
+/// [GigPage]
+class GigRoute extends PageRouteInfo<void> {
+  const GigRoute({List<PageRouteInfo>? children})
+      : super(
+          GigRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'GigRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -54,6 +80,20 @@ class SplashRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SplashRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [VenuePage]
+class VenueRoute extends PageRouteInfo<void> {
+  const VenueRoute({List<PageRouteInfo>? children})
+      : super(
+          VenueRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'VenueRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
