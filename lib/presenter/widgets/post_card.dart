@@ -15,22 +15,33 @@ class Post extends StatelessWidget {
       child: Stack(children: [
         PostCard(),
         AtButton(),
-        Positioned(
-          bottom: 20, // 조절 가능: 아래로부터의 거리
-          left: 0, // 조절 가능: 왼쪽으로부터의 거리
-          right: 0, // 조절 가능: 오른쪽으로부터의 거리
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                ArtistButton(name: "radiohead",),
-                ArtistButton(name: "deftones",),
-                ArtistButton(name: "gingnang boyz",),
-              ],
-            ),
-          )
-        ),
+        ArtistButtons(),
       ]),
+    );
+  }
+}
+
+class ArtistButtons extends StatelessWidget {
+  const ArtistButtons({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      bottom: 20, // 조절 가능: 아래로부터의 거리
+      left: 0, // 조절 가능: 왼쪽으로부터의 거리
+      right: 0, // 조절 가능: 오른쪽으로부터의 거리
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            ArtistButton(name: "radiohead",),
+            ArtistButton(name: "deftones",),
+            ArtistButton(name: "gingnang boyz",),
+          ],
+        ),
+      )
     );
   }
 }
