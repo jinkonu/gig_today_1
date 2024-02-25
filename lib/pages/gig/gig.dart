@@ -2,8 +2,8 @@ import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../presenter/gen/assets.gen.dart';
+import 'package:gig_today_1/pages/gig/sections/profile.dart';
+import 'package:gig_today_1/pages/gig/sections/thumbnail.dart';
 
 @RoutePage()
 class GigPage extends StatefulWidget {
@@ -26,40 +26,13 @@ class _GigPageState extends State<GigPage> {
             title: Text("MyAuntMary", style: TextStyle(color: Colors.white),),
           )
         ],
-        body: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              GigCard(),
-              SizedBox(height: 20,),
-              Container(
-                height: 200,
-                child: Row(
-
-                ),
-              )
-            ],
-          )
-        ),
-      ),
-    );
-  }
-}
-
-class GigCard extends StatelessWidget {
-  const GigCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => context.router.pop(),
-      child: Hero(
-        tag: 'post0',
-        child: Image(
-        image: Assets.images.postExample1.provider(),
-        width: MediaQuery.of(context).size.width,
+        body: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            GigThumbnail(),
+            SizedBox(height: 20,),
+            GigProfile(),
+          ],
         ),
       ),
     );
