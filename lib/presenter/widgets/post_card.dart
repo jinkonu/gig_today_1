@@ -18,7 +18,7 @@ class Post extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 20.0),
       child: Stack(children: [
-        ShowCard(index: index,),
+        GigCard(index: index,),
         AtButton(),
         ArtistButtons(),
       ]),
@@ -52,10 +52,10 @@ class ArtistButton extends StatelessWidget {
   }
 }
 
-class ShowCard extends StatelessWidget {
+class GigCard extends StatelessWidget {
   final int index;
 
-  const ShowCard({
+  const GigCard({
     super.key,
     required this.index,
   });
