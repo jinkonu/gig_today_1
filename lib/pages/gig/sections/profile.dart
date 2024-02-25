@@ -74,11 +74,12 @@ class _ArtistProfileState extends State<ArtistProfile> {
               SmoothPageIndicator(
                 controller: pageController,
                 count: 3,
-                effect: const WormEffect(
-                  dotHeight: 16,
-                  dotWidth: 16,
-                  type: WormType.thinUnderground,
-                ),
+                effect: const SlideEffect(
+                  dotWidth: 12,
+                  dotHeight: 12,
+                  activeDotColor: Colors.grey,
+                  dotColor: Colors.white,
+                )
               ),
           ]),
           SizedBox(
