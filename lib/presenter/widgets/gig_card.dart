@@ -34,7 +34,7 @@ class _GigCardState extends State<GigCard> {
         ),
         Text(
           widget.name,
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: TextStyle(color: Colors.white, fontSize: 15),
         ),
       ],
     );
