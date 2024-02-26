@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gig_today_1/presenter/navigation/navigation.dart';
 
 class GigCard extends StatefulWidget {
@@ -34,7 +36,7 @@ class _GigCardState extends State<GigCard> {
         ),
         Text(
           widget.name,
-          style: TextStyle(color: Colors.white, fontSize: 15),
+          style: TextStyle(color: Colors.white, fontSize: 17),
         ),
       ],
     );

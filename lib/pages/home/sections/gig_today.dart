@@ -17,20 +17,19 @@ class _GigTodaySectionState extends State<GigTodaySection> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 30,),
-        Text("GIG TODAY",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 30,),),
-        SizedBox(height: 20,),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Text("GIG TODAY",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,),),
+        ),
         Container(
           height: 400,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return Post(
-                index: index,
-              );
+              return Post(index: index,);
             },
             itemCount: 10,
           ),

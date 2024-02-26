@@ -2,7 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gig_today_1/pages/gig/sections/profile.dart';
+import 'package:gig_today_1/pages/gig/sections/meta_data.dart';
 import 'package:gig_today_1/pages/gig/sections/thumbnail.dart';
 
 @RoutePage()
@@ -21,17 +21,16 @@ class _GigPageState extends State<GigPage> {
       body: NestedScrollView(
         headerSliverBuilder: (_, innerBoxIsScrolled) => [
           SliverAppBar(
-            backgroundColor: Colors.black12,
+            leading: IconButton(onPressed: () => context.router.pop(), icon: Icon(Icons.arrow_back_ios_new, color: Colors.white,)),
+            backgroundColor: Colors.black.withOpacity(0.01),
             pinned: true,
-            title: Text("MyAuntMary", style: TextStyle(color: Colors.white),),
           )
         ],
         body: ListView(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.only(bottom: 200),
           children: <Widget>[
             GigThumbnail(),
-            SizedBox(height: 20,),
-            GigProfile(),
+            GigMetaData(),
           ],
         ),
       ),
