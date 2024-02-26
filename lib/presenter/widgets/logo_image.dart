@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../gen/assets.gen.dart';
+import '../assets.gen.dart';
 
 class LogoImage extends StatelessWidget {
   final double size;

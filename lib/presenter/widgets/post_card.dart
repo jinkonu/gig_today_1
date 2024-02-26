@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gig_today_1/presenter/navigation/navigation.dart';
 
-import '../gen/assets.gen.dart';
+import '../assets.gen.dart';
 
 class Post extends StatelessWidget {
   final int index;

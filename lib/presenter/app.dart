@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_frame/flutter_web_frame.dart';
-import 'package:gig_today_1/presenter/gen/fonts.gen.dart';
+import 'package:gig_today_1/presenter/fonts.gen.dart';
 
 import 'navigation/navigation.dart';
 
