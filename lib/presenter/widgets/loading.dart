@@ -33,16 +33,14 @@ class _LoadingIndicatorState extends State<LoadingIndicator>
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: AnimatedBuilder(
-          animation: _animation,
-          builder: (context, child) {
-            return Transform.rotate(
-              angle: _animation.value * math.pi / 60,
-              child: const LogoImage(size: 170),
-            );
-          }),
-    );
+    return AnimatedBuilder(
+        animation: _animation,
+        builder: (context, child) {
+          return Transform.rotate(
+            angle: _animation.value * math.pi / 60,
+            child: const LogoImage(size: 170),
+          );
+        });
   }
 
   @override

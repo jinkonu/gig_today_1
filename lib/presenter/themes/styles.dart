@@ -17,14 +17,12 @@ class AppThemeStyles {
       ),
     ],
     this.buttonSmall = const ButtonStyle(
-      minimumSize: MaterialStatePropertyAll(Size.zero),
-      padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 4, horizontal: 12)),
+      minimumSize: MaterialStatePropertyAll(Size(20, 30)),
+      padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 10, horizontal: 10)),
       shape: MaterialStatePropertyAll(
-        RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(6))),
+        RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
       ),
-      textStyle: MaterialStatePropertyAll(
-        TextStyle(fontSize: 12, fontWeight: FontWeight.w500, height: 1.3),
-      ),
+      backgroundColor: MaterialStatePropertyAll(Colors.black)
     ),
     this.buttonMedium = const ButtonStyle(
       minimumSize: MaterialStatePropertyAll(Size.zero),

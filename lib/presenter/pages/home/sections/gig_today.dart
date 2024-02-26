@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gig_today_1/presenter/themes/extensions.dart';
-import 'package:gig_today_1/presenter/pages/home/widgets/post_card.dart';
+import 'package:gig_today_1/presenter/pages/home/widgets/gig_post.dart';
 
 class GigTodaySection extends StatefulWidget {
   const GigTodaySection({super.key});
