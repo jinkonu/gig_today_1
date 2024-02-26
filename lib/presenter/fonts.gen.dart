@@ -12,4 +12,10 @@ class FontFamily {
 
   /// Font family: LemonMilk
   static const String lemonMilk = 'LemonMilk';
+
+  /// Font family: baemin_1
+  static const String baemin1 = 'baemin_1';
+
+  /// Font family: baemin_2
+  static const String baemin2 = 'baemin_2';
 }

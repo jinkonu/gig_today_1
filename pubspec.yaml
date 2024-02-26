@@ -75,6 +75,7 @@ dev_dependencies:
   auto_route_generator: ^7.3.2
   build_runner: ^2.4.7
   injectable_generator: ^2.4.1
+  freezed: ^2.4.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -95,6 +96,12 @@ flutter:
     - family: LemonMilk
       fonts:
         - asset: assets/fonts/LEMONMILK-Medium.otf
+    - family: baemin_1
+      fonts:
+        - asset: assets/fonts/baemin_1.ttf
+    - family: baemin_2
+      fonts:
+        - asset: assets/fonts/baemin_2.ttf
 
 
 
@@ -123,3 +130,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_gen:
+  output: lib/presenter/
