@@ -2,10 +2,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:gig_today_1/presenter/widgets/logo_image.dart';
 
-import '../gen/assets.gen.dart';
-
 class LoadingIndicator extends StatefulWidget {
-  const LoadingIndicator({super.key});
+  const LoadingIndicator({super.key,});
 
   @override
   State<LoadingIndicator> createState() => _LoadingIndicatorState();
@@ -22,7 +20,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator>
 
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 10),
+      duration: const Duration(seconds: 10),
     );
 
     _animation = Tween<double>(
@@ -41,10 +39,9 @@ class _LoadingIndicatorState extends State<LoadingIndicator>
           builder: (context, child) {
             return Transform.rotate(
               angle: _animation.value * math.pi / 60,
-              child: LogoImage(size: 170),
+              child: const LogoImage(size: 170),
             );
-          }
-      ),
+          }),
     );
   }
 
