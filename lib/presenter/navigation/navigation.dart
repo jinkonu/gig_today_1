@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 
-import '../../pages/gig/gig.dart';
-import '../../pages/home/home.dart';
-import '../../pages/splash/splash.dart';
-import '../../pages/venue/venue.dart';
+import '../pages/gig/gig.dart';
+import '../pages/home/home.dart';
+import '../pages/splash/splash.dart';
+import '../pages/venue/venue.dart';
 
 part 'navigation.gr.dart';
 
