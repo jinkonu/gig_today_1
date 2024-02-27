@@ -5,13 +5,17 @@ import '../assets.gen.dart';
 import '../navigation/navigation.dart';
 
 class GigPoster extends StatelessWidget {
-  final int index;
+  final String tag;
   final double circularRadius;
+  final double width;
+  final VoidCallback onTap;
 
   const GigPoster({
     super.key,
-    required this.index,
+    required this.tag,
     required this.circularRadius,
+    required this.width,
+    required this.onTap,
   });
 
   @override
@@ -19,13 +23,12 @@ class GigPoster extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(circularRadius),
       child: InkWell(
-        onTap: () => context.router.push(const GigRoute()),
+        onTap: onTap,
         child: Hero(
-          tag: 'post$index',
+          tag: tag,
           child: Image(
             image: Assets.images.postExample1.provider(),
-            width: 200,
-            height: 280,
+            width: width,
           ),
         ),
       ),

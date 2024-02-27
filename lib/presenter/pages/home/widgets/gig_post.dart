@@ -23,16 +23,19 @@ class GigPost extends StatelessWidget {
     return Stack(
       children: [
         GigPoster(
-          index: index,
+          onTap: () => context.router.push(const GigRoute()),
+          tag: '$index',
           circularRadius: 30.0,
+          width: 200,
         ),
         const Positioned(
           top: -5,
           child: VenueButton(name: "Club FF"),
         ),
         const Positioned(
-          bottom: 70,
+          bottom: 10,
           child: ArtistButtons(
+            width: 200,
             names: ["GIG TODAY", "long time no shit", "검정치마"],
           ),
         ),

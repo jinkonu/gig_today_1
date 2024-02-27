@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gig_today_1/presenter/assets.gen.dart';
+import 'package:gig_today_1/presenter/themes/extensions.dart';
 import 'package:gig_today_1/presenter/widgets/gig_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -21,7 +22,6 @@ class GigProfile extends StatelessWidget {
   }
 }
 
-
 class VenueProfile extends StatelessWidget {
   const VenueProfile({super.key});
 
@@ -31,17 +31,17 @@ class VenueProfile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Text(
-              "@",
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
+          Text(
+            "@",
+            style: context.typographies.heading,
+          ),
+          const SizedBox(
+            height: 10,
           ),
           Center(
-              child: GigCard(
-                  image: Assets.images.venueExample.provider(),
-                  name: "club ff")),
+            child: GigCard(
+              image: Assets.images.venueExample.provider(),
+              name: "club ff")),
         ],
       ),
     );
@@ -51,7 +51,8 @@ class VenueProfile extends StatelessWidget {
 class ArtistProfile extends StatelessWidget {
   ArtistProfile({super.key});
 
-  final PageController pageController = PageController(viewportFraction: 1, keepPage: true);
+  final PageController pageController =
+      PageController(viewportFraction: 1, keepPage: true);
 
   @override
   Widget build(BuildContext context) {
@@ -60,24 +61,24 @@ class ArtistProfile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Artists",
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-                SmoothPageIndicator(
-                    controller: pageController,
-                    count: 3,
-                    effect: const SlideEffect(
-                      dotWidth: 12,
-                      dotHeight: 12,
-                      activeDotColor: Colors.grey,
-                      dotColor: Colors.white,
-                    )
-                ),
-              ]),
-          SizedBox(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "ARTISTS",
+                style: context.typographies.heading,
+              ),
+              SmoothPageIndicator(
+                controller: pageController,
+                count: 3,
+                effect: const SlideEffect(
+                  dotWidth: 12,
+                  dotHeight: 12,
+                  activeDotColor: Colors.grey,
+                  dotColor: Colors.white,
+                )
+              ),
+          ]),
+          const SizedBox(
             height: 10,
           ),
           Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gig_today_1/presenter/themes/extensions.dart';
 
 class GigEtc extends StatelessWidget {
   const GigEtc({super.key});
@@ -12,14 +13,14 @@ class GigEtc extends StatelessWidget {
         children: [
           Text(
             "Notice",
-            style: TextStyle(color: Colors.white, fontSize: 25),
+            style: context.typographies.heading,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               child: Text(
                 "조심하세요.\n조심하십쇼.",
-                style: TextStyle(color: Colors.white, fontSize: 15),
+                style: context.typographies.body,
               ),
             ),
           ),

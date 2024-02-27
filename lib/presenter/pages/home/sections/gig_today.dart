@@ -22,7 +22,7 @@ class _GigTodaySectionState extends State<GigTodaySection> {
           ),
         ),
         SizedBox(
-          height: 400,
+          height: 340,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
