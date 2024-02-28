@@ -8,10 +8,21 @@ import 'package:http/http.dart' as http;
 @Singleton(as: GigRepository)
 class DefaultGigRepository extends GigRepository {
 
+  @override
+  Future<List<Gig>> getAllTodayGigs() async {
+    final response = await http.get(Uri.parse('http://localhost:8080/gig/today'));
+
+    if (response.statusCode == 200) {
+      return json.decode(response.body);
+    }
+
+    throw Exception('Failed to load data');
+  }
 
   @override
-  Future<List<Gig>> getTodayGigs() async {
-    final response = await http.get(Uri.parse('http://localhost:8080/gig/today'));
+  Future<List<Gig>> getTodayGigs({required int limit, required int page}) async {
+    final response = await http.get(Uri.parse('http://localhost:8080/gig/today')
+      .replace(queryParameters: {'page' : '$page', 'limit' : '$limit'}));
 
     if (response.statusCode == 200) {
       return json.decode(response.body);

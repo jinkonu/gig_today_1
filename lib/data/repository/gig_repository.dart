@@ -11,5 +11,6 @@ import 'package:gig_today_1/data/entity/gig.dart';
 abstract class GigRepository {
   const GigRepository();
 
-  Future<List<Gig>> getTodayGigs();
+  Future<List<Gig>> getAllTodayGigs();
+  Future<List<Gig>> getTodayGigs({required int limit, required int page});
 }
