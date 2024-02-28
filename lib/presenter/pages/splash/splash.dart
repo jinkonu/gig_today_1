@@ -15,7 +15,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  final Duration pageLoadingDuration = Duration(seconds: 1);
+  final Duration pageLoadingDuration = const Duration(seconds: 1);
 
   @override
   void initState() {
