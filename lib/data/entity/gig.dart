@@ -11,12 +11,14 @@ class Gig with _$Gig {
   const factory Gig({
     required String id,
     required String name,
-    required DateTime startTime,
-    required DateTime endTime,
+    required String startTime,
+    required String endTime,
     required int ticketPrice,
     required String notice,
+    required String venueId,
+    required Map<String, String> artists,
   }) = _Gig;
 
   factory Gig.fromJson(Map<String, Object?> json) => _$GigFromJson(json);
-  Map<String, Object?> toJson() => _$GigToJson(this);
+  @override Map<String, Object?> toJson() => _$GigToJson(this);
 }

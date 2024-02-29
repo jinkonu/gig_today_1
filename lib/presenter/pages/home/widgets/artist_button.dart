@@ -3,11 +3,11 @@ import 'package:gig_today_1/presenter/widgets/button.dart';
 
 class ArtistButtons extends StatelessWidget {
   final double width;
-  final List<String> names;
+  final Map<String, String> artists;
 
   const ArtistButtons({
     super.key,
-    required this.names,
+    required this.artists,
     required this.width,
   });
 
@@ -21,11 +21,11 @@ class ArtistButtons extends StatelessWidget {
         itemBuilder: (context, index) {
           return SmallTextButton(
             onPressed: () {},
-            content: names[index],
+            content: artists.values.elementAt(index),
             fontSize: 20,
           );
         },
-        itemCount: names.length,
+        itemCount: artists.length,
       ),
     );
   }

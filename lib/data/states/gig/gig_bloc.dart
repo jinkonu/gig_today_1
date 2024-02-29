@@ -13,8 +13,7 @@ class GigBloc extends Bloc<GigEvent, GigState> {
 
   GigBloc({
     required GigRepository gigRepository,
-  })
-      : _gigRepository = gigRepository,
+  })  : _gigRepository = gigRepository,
         super(const GigState()) {
     on<GigLoadStarted>(
       _onLoadStarted,

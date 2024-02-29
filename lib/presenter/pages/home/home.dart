@@ -27,11 +27,7 @@ class _HomePageState extends State<HomePage> {
         ],
         body: const Padding(
           padding: EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              GigTodaySection(),
-            ],
-          ),
+          child: GigTodaySection(),
         ),
       ),
     );

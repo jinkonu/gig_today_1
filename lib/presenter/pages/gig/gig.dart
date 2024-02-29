@@ -1,19 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:gig_today_1/data/entity/gig.dart';
 import 'package:gig_today_1/presenter/themes/extensions.dart';
 import 'package:gig_today_1/presenter/widgets/gig_poster.dart';
 
 import 'sections/meta_data.dart';
 
 @RoutePage()
-class GigPage extends StatefulWidget {
-  const GigPage({super.key});
+class GigPage extends StatelessWidget {
+  final Gig gig;
 
-  @override
-  State<GigPage> createState() => _GigPageState();
-}
+  const GigPage({
+    super.key,
+    required this.gig,
+  });
 
-class _GigPageState extends State<GigPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,8 +37,9 @@ class _GigPageState extends State<GigPage> {
           padding: const EdgeInsets.only(bottom: 200),
           children: <Widget>[
             GigPoster(
+              id: gig.id,
               onTap: () => context.router.pop(),
-              tag: '0',
+              tag: gig.id,
               circularRadius: 0,
               width: MediaQuery.of(context).size.width,
             ),

@@ -46,6 +46,17 @@ class CurrentGigSelector extends GigStateSelector<Gig> {
         );
 }
 
+class GigSelector extends GigStateSelector<GigSelectorState> {
+  GigSelector(int index, Widget Function(Gig, bool) builder, {super.key})
+    : super(
+    selector: (state) => GigSelectorState(
+      state.gigs[index],
+      state.selectedGigIndex == index,
+    ),
+    builder: (value) => builder(value.gig, value.selected),
+  );
+}
+
 class GigSelectorState {
   final Gig gig;
   final bool selected;
@@ -61,15 +72,4 @@ class GigSelectorState {
 
   @override
   int get hashCode => gig.hashCode ^ selected.hashCode;
-}
-
-class GigSelector extends GigStateSelector<GigSelectorState> {
-  GigSelector(int index, Widget Function(Gig, bool) builder, {super.key})
-    : super(
-    selector: (state) => GigSelectorState(
-        state.gigs[index],
-        state.selectedGigIndex == index,
-    ),
-    builder: (value) => builder(value.gig, value.selected),
-  );
 }

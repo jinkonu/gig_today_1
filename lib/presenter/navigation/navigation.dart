@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:gig_today_1/data/entity/gig.dart';
 
 import '../pages/gig/gig.dart';
 import '../pages/home/home.dart';
@@ -14,8 +16,8 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
     AutoRoute(path: "/", page: SplashRoute.page),
     AutoRoute(path: "/home", page: HomeRoute.page),
-    AutoRoute(path: "/venue/:id", page:VenueRoute.page),
     AutoRoute(path: "/gig/:id", page: GigRoute.page),
+    AutoRoute(path: "/venue/:id", page:VenueRoute.page),
   ];
 
   @override

@@ -16,9 +16,13 @@ abstract class _$AppRouter extends RootStackRouter {
   @override
   final Map<String, PageFactory> pagesMap = {
     GigRoute.name: (routeData) {
+      final args = routeData.argsAs<GigRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const GigPage(),
+        child: GigPage(
+          key: args.key,
+          gig: args.gig,
+        ),
       );
     },
     HomeRoute.name: (routeData) {
@@ -44,16 +48,39 @@ abstract class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [GigPage]
-class GigRoute extends PageRouteInfo<void> {
-  const GigRoute({List<PageRouteInfo>? children})
-      : super(
+class GigRoute extends PageRouteInfo<GigRouteArgs> {
+  GigRoute({
+    Key? key,
+    required Gig gig,
+    List<PageRouteInfo>? children,
+  }) : super(
           GigRoute.name,
+          args: GigRouteArgs(
+            key: key,
+            gig: gig,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'GigRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<GigRouteArgs> page = PageInfo<GigRouteArgs>(name);
+}
+
+class GigRouteArgs {
+  const GigRouteArgs({
+    this.key,
+    required this.gig,
+  });
+
+  final Key? key;
+
+  final Gig gig;
+
+  @override
+  String toString() {
+    return 'GigRouteArgs{key: $key, gig: $gig}';
+  }
 }
 
 /// generated route for
