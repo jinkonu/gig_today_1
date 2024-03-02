@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:gig_today_1/data/states/gig/gig_bloc.dart';
 import 'package:gig_today_1/data/states/settings/settings_bloc.dart';
 import 'package:gig_today_1/di.config.dart';
 import 'package:injectable/injectable.dart';
@@ -33,6 +34,9 @@ class GlobalBlocProviders extends StatelessWidget {
       providers: [
         BlocProvider<SettingsBloc>(
           create: (context) => getIt.get<SettingsBloc>(),
+        ),
+        BlocProvider<GigBloc>(
+            create: (context) => getIt.get<GigBloc>(),
         )
       ],
       child: child,

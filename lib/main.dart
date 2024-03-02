@@ -7,7 +7,9 @@ void main() async {
 
   await configureDependencies();
 
-  runApp(GlobalBlocProviders(
-    child: GigTodayApp(),
-  ));
+  runApp(
+    GlobalBlocProviders(
+      child: GigTodayApp(),
+    )
+  );
 }
